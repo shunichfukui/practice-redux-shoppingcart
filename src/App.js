@@ -1,10 +1,12 @@
 import './App.css';
-import Navbar from './components/Navbar';
+import CartContainer from './components/molecules/CartContainer';
+import Navbar from './components/organisms/Navbar';
 
 function App() {
   return (
     <main>
       <Navbar />
+      <CartContainer />
     </main>
      
   );
