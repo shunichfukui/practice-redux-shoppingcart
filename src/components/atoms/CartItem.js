@@ -2,6 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { MinusItemIcon, PlusItemIcon } from '../../HeroIcons'
 import { removeItem, increaseItemAmount, decreaseItemAmount } from '../../features/cart/CartSlice';
+import { openModal } from '../../features/modal/DeleteCartItemModal';
 
 const CartItem = ({id, img, title, price, amount}) => {
   const dispatch = useDispatch();
@@ -12,7 +13,7 @@ const CartItem = ({id, img, title, price, amount}) => {
       <div>
         <h4>{title}</h4>
         <h4 className='item-price'>{price}円</h4>
-        <button className='remove-btn' onClick={() => dispatch(removeItem(id))}>削除</button>
+        <button className='remove-btn' onClick={() => dispatch(openModal(id))}>削除</button>
       </div>
       <div>
         <button className='amount-btn' onClick={() => dispatch(increaseItemAmount(id))}>
@@ -21,7 +22,7 @@ const CartItem = ({id, img, title, price, amount}) => {
         <p className='amount'>{amount}</p>
         <button className='amount-btn' onClick={() => {
           if (amount === 1) {
-            dispatch(removeItem(id));
+            dispatch(openModal(id));
             return;
           }
           dispatch(decreaseItemAmount(id))
