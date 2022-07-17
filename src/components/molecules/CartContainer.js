@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { clearCart } from '../../features/cart/CartSlice';
+import { openModal } from '../../features/modal/DeleteCartItemModal';
 import CartItem from '../atoms/CartItem';
 
 
@@ -35,7 +35,7 @@ const CartContainer = () => {
                             合計<span>{price}円</span>
                         </h4>
                     </div>
-                    <button className='btn clear-btn' onClick={() => dispatch(clearCart())}>全削除</button>
+                    <button className='btn clear-btn' onClick={() => dispatch(openModal())}>全削除</button>
                 </footer>
             </section>
         )
