@@ -16,7 +16,7 @@ const cartItems = [
     {
       id: 3,
       title: "今の写真",
-      price: "8900",
+      price: "10",
       img: "https://uploda1.ysklog.net/uploda/e7f60b4d74.png",
       amount: 1,
     },
