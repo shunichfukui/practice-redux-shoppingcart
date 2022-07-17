@@ -1,14 +1,18 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
 import { MinusItemIcon, PlusItemIcon } from '../../HeroIcons'
+import { removeItem } from '../../features/cart/CartSlice';
 
-const CartItem = ({img, title, price, amount}) => {
+const CartItem = ({id, img, title, price, amount}) => {
+  const dispatch = useDispatch();
+
   return (
     <article className='cart-item'>
       <img src={img} alt='' />
       <div>
         <h4>{title}</h4>
         <h4 className='item-price'>{price}円</h4>
-        <button className='remove-btn'>削除</button>
+        <button className='remove-btn' onClick={() => dispatch(removeItem(id))}>削除</button>
       </div>
       <div>
         <button className='amount-btn'>
